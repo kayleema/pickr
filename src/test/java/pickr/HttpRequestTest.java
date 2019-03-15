@@ -22,7 +22,7 @@ public class HttpRequestTest {
 
     @Test
     public void greetingShouldReturnDefaultMessage() throws Exception {
-        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/", String.class))
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/home", String.class))
                 .contains("Hello World");
     }
 }
