@@ -17,6 +17,9 @@ public class Post {
         this.caption = caption;
     }
 
+    private Post() {
+    }
+
     public String getCaption() {
         return caption;
     }
@@ -33,4 +36,13 @@ public class Post {
         this.id = id;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || !Post.class.isAssignableFrom(obj.getClass())) {
+            return false;
+        }
+
+        final Post p = (Post) obj;
+        return p.getCaption().equals(this.getCaption());
+    }
 }
